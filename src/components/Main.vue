@@ -2,11 +2,6 @@
     <main>
         <div class="container-lg">
 
-            <div class="search">
-                <div class="row">
-                    
-                </div>
-            </div>
 
             <div class="row py-5">
                 <div class="col-12 d-flex flex-wrap py-5">
@@ -72,18 +67,6 @@ export default {
         background-color: red;
         // height: 1000px;
             .container-lg{
-                .search{
-                    .row{
-                        .col-3{
-                            input{
-
-                            }
-                            button{
-                                
-                            }
-                        }
-                    }
-                }
                 .row{
 
                     .col-12{
