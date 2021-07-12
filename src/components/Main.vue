@@ -4,18 +4,6 @@
 
             <div class="search">
                 <div class="row">
-
-                    <div class="col-4 py-3 d-inline-flex">
-                        <input type="text" 
-                        class="form-control" 
-                        placeholder="Scegli un titolo"
-                        v-model.trim="inputText">
-
-                        <button type="submit" 
-                        class="ms-2 px-2"
-                        @click.prevent="$emit('searchForm',inputText)"
-                        >Cerca</button>
-                    </div>
                     
                 </div>
             </div>
@@ -58,7 +46,6 @@ export default {
         return {
             apiURL : "https://api.themoviedb.org/3/movie/popular?api_key=e074c01e562b214f49b0d0b915aa74f1",
             films: [],
-            inputText:'',
         }
     },
     created (){
