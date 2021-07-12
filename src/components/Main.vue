@@ -72,6 +72,8 @@ export default {
 <style scoped lang="scss">
     main{
         background-color: red;
+        height: 93vh;
+        overflow-y: scroll;
             .container-lg{
                 .row{
 

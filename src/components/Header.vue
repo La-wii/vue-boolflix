@@ -37,6 +37,7 @@ export default {
     header{
         background-color: black;
         // height: 70px;
+        height: 7vh;
             nav{
                 .container-lg{
                     .row{
