@@ -65,7 +65,6 @@ export default {
 <style scoped lang="scss">
     main{
         background-color: red;
-        // height: 1000px;
             .container-lg{
                 .row{
 
