@@ -1,7 +1,10 @@
 <template>
     <main>
         <div class="container-lg">
-
+        
+            <div class="row">
+                <Search @search="searchCharacter"/>
+            </div>
 
             <div class="row py-5">
                 <div class="col-12 d-flex flex-wrap py-5">
@@ -56,6 +59,10 @@ export default {
                 this.films = picker.data.results
                 
             })
+        },
+        searchCharacter(searchInput){
+            this.searchText = searchInput;
+            // console.log('ciao', this.searchText);
         }
     }
 
