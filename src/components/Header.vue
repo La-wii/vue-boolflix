@@ -4,7 +4,7 @@
             <div class="container-lg">
                 <div class="row">
                     <div class="col-2">
-                        <img src="@/img/spotify-logo.png" alt="">
+                        
                     </div>
                 </div>
             </div>
