@@ -1,16 +1,36 @@
 <template>
     <main>
         <div class="container-lg">
+
+            <div class="search">
+                <div class="row">
+
+                    <div class="col-3 py-3">
+                        <input type="text">
+                        <button class="ms-2 px-2">Cerca</button>
+                    </div>
+                    
+                </div>
+            </div>
+
             <div class="row py-5">
                 <div class="col-12 d-flex flex-wrap py-5">
-                    <div v-for="(element, index) in films" :key="index" class="card" style="width: 18rem;">
+                    <div v-for="(element, index) in films" :key="index" class="card" style="width: 12rem;">
                         <!-- <img :src="" class="card-img-top" alt="..."> -->
 
                         <div class="card-body">
-                            <h5 class="card-title">{{element.title}}</h5>
-                            <p class="card-text">{{element.original_title}}</p>
-                            <p class="card-text">{{element.original_language}}</p>
-                            <p class="card-text">{{element.vote_average}}</p>
+                            <h5 class="card-title">
+                                {{element.title}}
+                            </h5>
+                            <p class="card-text">
+                                {{element.original_title}}
+                            </p>
+                            <p class="card-text">
+                                {{element.original_language}}
+                            </p>
+                            <p class="card-text">
+                                {{element.vote_average}}
+                            </p>
                         </div>
 
                     </div>
@@ -29,12 +49,12 @@ export default {
     name: "Main",
     data() {
         return {
-            apiURL : "https://api.themoviedb.org/3/movie/550?api_key=e23f5b7ea0860eb65056406dfeb3eda9",
+            apiURL : "https://api.themoviedb.org/3/movie/popular?api_key=e074c01e562b214f49b0d0b915aa74f1",
             films: [],
         }
     },
     created (){
-       this.getFilms() 
+       this.getFilms()
        
     },
     methods: {
@@ -43,7 +63,7 @@ export default {
             .get(this.apiURL)
             .then (picker =>{
                 console.log(picker);
-                this.films.push(picker.data)
+                this.films = picker.data.results
                 
                 // this.films = picker.data.title
             })
@@ -56,14 +76,28 @@ export default {
 <style scoped lang="scss">
     main{
         background-color: red;
+        // height: 1000px;
+            .container-lg{
+                .search{
+                    .row{
+                        .col-3{
+                            input{
 
-            .row{
+                            }
+                            button{
+                                
+                            }
+                        }
+                    }
+                }
+                .row{
 
-                .col-12{
+                    .col-12{
 
-                    .card{
-                    width: calc(100% / 5);
-                    margin: 20px;
+                        .card{
+                        width: calc(100% / 5);
+                        margin: 20px;
+                        }
                     }
                 }
             }
