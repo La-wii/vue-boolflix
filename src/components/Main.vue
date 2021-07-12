@@ -11,7 +11,10 @@
                         placeholder="Scegli un titolo"
                         v-model.trim="inputText">
 
-                        <button type="submit" class="ms-2 px-2">Cerca</button>
+                        <button type="submit" 
+                        class="ms-2 px-2"
+                        @click.prevent="$emit('searchForm',inputText)"
+                        >Cerca</button>
                     </div>
                     
                 </div>
@@ -70,7 +73,6 @@ export default {
                 console.log(picker);
                 this.films = picker.data.results
                 
-                // this.films = picker.data.title
             })
         }
     }
