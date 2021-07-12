@@ -2,8 +2,7 @@
   <div id="app">
     <Header/>
     <Search @search="search"/>
-    
-    <Main/>
+    <Main :search="selectionText"/>
   </div>
 </template>
 
@@ -20,6 +19,17 @@ export default {
     Header,
     Search,
   },
+  data(){
+    return{
+      selectionText: ''
+    }
+  },
+  methods: {
+    search(str){
+      console.log(str);
+      this.selectionText = str;
+    }
+  }
 };
 </script>
 

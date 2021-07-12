@@ -2,16 +2,13 @@
     <main>
         <div class="container-lg">
         
-            <div class="row">
-                <Search @search="searchCharacter"/>
-            </div>
 
             <div class="row py-5">
                 <div class="col-12 d-flex flex-wrap py-5">
                     <div v-for="(element, index) in films" :key="index" class="card" style="width: 12rem;">
                         <!-- <img :src="" class="card-img-top" alt="..."> -->
 
-                        <div class="card-body">
+                        <div class="card-body " v-if="element.title.toLowerCase().includes(search.toLowerCase())">
                             <h5 class="card-title">
                                 {{element.title}}
                             </h5>
@@ -40,6 +37,9 @@
 import axios from 'axios';
 export default {
     name: "Main",
+    props: {
+    search: String,
+    },
     data() {
         return {
             apiURL : "https://api.themoviedb.org/3/movie/popular?api_key=e074c01e562b214f49b0d0b915aa74f1",
@@ -62,7 +62,7 @@ export default {
         },
         searchCharacter(searchInput){
             this.searchText = searchInput;
-            // console.log('ciao', this.searchText);
+            
         }
     }
 
