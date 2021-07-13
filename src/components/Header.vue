@@ -18,7 +18,6 @@
                     </div>
 
                     
-
                 </div>
             </div>
 
@@ -28,7 +27,7 @@
 
 <script>
 export default {
-    name: "Header",
+    // name: "Header",
     
 }
 </script>
