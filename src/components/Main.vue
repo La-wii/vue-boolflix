@@ -8,11 +8,11 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in films" :key="index" class="card bg-transparent" style="width: 12rem;">
+                    <div v-for="(element, index) in films" :key="index" class="card bg-transparen text-light" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
-                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="...">
-                        <div class="card-body" v-if="element.title.toLowerCase().includes(search.toLowerCase())">
+                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="" class="position-relative">
+                        <div class="card-body position-absolute" v-if="element.title.toLowerCase().includes(search.toLowerCase())">
                             <h5 class="card-title">
                                 {{element.title}}
                             </h5>
@@ -50,11 +50,11 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in series" :key="index" class="card bg-transparent" style="width: 12rem;">
+                    <div v-for="(element, index) in series" :key="index" class="card bg-transparent text-light" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
-                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="...">
-                        <div class="card-body" v-if="element.name.toLowerCase().includes(search.toLowerCase())">
+                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="..." class="position-relative">
+                        <div class="card-body position-absolute" v-if="element.name.toLowerCase().includes(search.toLowerCase())">
                             <h5 class="card-title">
                                 {{element.name}}x   
                             </h5>
@@ -136,7 +136,7 @@ export default {
 
 <style scoped lang="scss">
     main{
-        background-color: red;
+        background-color: black;
         height: 93vh;
         overflow-y: scroll;
             .container-lg{
@@ -147,13 +147,19 @@ export default {
                         .card{
                         width: calc(100% / 5);
                         margin: 20px;
+                            &:hover{
+                                opacity: 0.8;
+                                // background-color: rgba(0, 0, 0, 0.8) ;
+                                   
+                            }
                             .card-body{
                                 img{
                                 height: 20px;
                                 width: 20px;
                                 margin-left: 3px;
                                 }
-                            }
+                                
+                            }   
                             
                         }
                     }
