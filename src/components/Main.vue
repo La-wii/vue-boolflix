@@ -8,7 +8,7 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in films" :key="index" class="card bg-transparent" style="width: 14rem;">
+                    <div v-for="(element, index) in films" :key="index" class="card bg-transparent" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
                         <!-- <img :src="" class="card-img-top" alt="..."> -->
@@ -50,7 +50,7 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in series" :key="index" class="card bg-transparent" style="width: 14rem;">
+                    <div v-for="(element, index) in series" :key="index" class="card bg-transparent" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
                         <!-- <img :src="" class="card-img-top" alt="..."> -->
