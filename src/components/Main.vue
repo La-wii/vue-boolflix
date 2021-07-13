@@ -8,7 +8,7 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in films" :key="index" class="card bg-transparent" style="width: 12rem;">
+                    <div v-for="(element, index) in films" :key="index" class="card bg-transparent" style="width: 14rem;">
 
                         <!-- inizio  img + card -->
                         <!-- <img :src="" class="card-img-top" alt="..."> -->
@@ -25,6 +25,7 @@
                                 <strong>Lingua originale:</strong>
                                 <br>
                                 {{element.original_language}}
+                                <img :src="'/img/'+element.original_language+'.png'" alt="">
                             </p>
                             <p class="card-text">
                                 <strong>Voto:</strong>
@@ -41,14 +42,15 @@
             <!-- fine row -->
 
 
-
+            
             <!-- inizio row -->
             <div class="row py-5">
+                
                 <!-- inizio col -->
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in series" :key="index" class="card bg-transparent" style="width: 12rem;">
+                    <div v-for="(element, index) in series" :key="index" class="card bg-transparent" style="width: 14rem;">
 
                         <!-- inizio  img + card -->
                         <!-- <img :src="" class="card-img-top" alt="..."> -->
@@ -64,6 +66,7 @@
                             <p class="card-text">
                                 <strong>Lingua originale:</strong>
                                 {{element.original_language}}
+                                <img :src="'/img/'+element.original_language+'.png'" alt="">
                             </p>
                             <p class="card-text">
                                 <strong>Voto:</strong>
@@ -144,6 +147,10 @@ export default {
                         .card{
                         width: calc(100% / 5);
                         margin: 20px;
+                            img{
+                                height: 20px;
+                                width: 20px;
+                            }
                         }
                     }
                 }
