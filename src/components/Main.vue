@@ -8,11 +8,11 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in films" :key="index" class="card bg-transparen " style="width: 12rem;">
+                    <div v-for="(element, index) in films" :key="index" class="card bg-transparent text-danger" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
                         <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="" class="position-relative">
-                        <div class="card-body position-absolute" v-if="element.title.toLowerCase().includes(search.toLowerCase())">
+                        <div class="card-body position-absolute">
                             <h5 class="card-title">
                                 {{element.title}}
                             </h5>
@@ -45,16 +45,16 @@
             
             <!-- inizio row -->
             <div class="row py-5">
-                
+                <h2>Serie</h2>
                 <!-- inizio col -->
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in series" :key="index" class="card bg-transparent text-light" style="width: 12rem;">
+                    <div v-for="(element, index) in serie" :key="index" class="card bg-transparent text-danger" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
                         <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="..." class="position-relative">
-                        <div class="card-body position-absolute" v-if="element.name.toLowerCase().includes(search.toLowerCase())">
+                        <div class="card-body position-absolute">
                             <h5 class="card-title">
                                 {{element.name}}x   
                             </h5>
@@ -87,65 +87,14 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 export default {
     name: "Main",
     props: {
-    search: String,
-    },
-    data() {
-        return {
-            // apiURL : "https://api.themoviedb.org/3/search/movie?api_key=e23f5b7ea0860eb65056406dfeb3eda9&language=en-US&include_adult=false&query=text",
-            apiURL : "https://api.themoviedb.org/3/movie/popular?api_key=e23f5b7ea0860eb65056406dfeb3eda9",
-            films: [],
-            serieURL : "https://api.themoviedb.org/3/search/tv?api_key=e23f5b7ea0860eb65056406dfeb3eda9&language=it_IT&query=s",
-            // serieURL : "https://api.themoviedb.org/3/search/tv?api_key=e23f5b7ea0860eb65056406dfeb3eda9&language=en-US&query=text",
-            series: [],
-            // aUrlF:'https://api.themoviedb.org/3/search/movie',
-            // aKeyF:'e23f5b7ea0860eb65056406dfeb3eda9',
-            // language: 'en-US'
-        }
-    },
-    created (){
-       this.getFilms(),
-       this.getSeries()
-       
-    },
-    methods: {
-        getFilms(){
-            axios
-            .get(this.apiURL)
-            // .get(this.aUrlF, {
-            //     params: {
-            //         api_key: this.aKeyF,
-            //         language: this.language,
-            //         query: text
-            //     }
-            // })
-
-            
-            .then (picker =>{
-                console.log(picker);
-                this.films = picker.data.results
-                
-            })
-        },
-        // searchCharacter(searchInput){
-        //     this.searchText = searchInput;
-            
-        // }
-        getSeries(){
-            axios
-            .get(this.serieURL)
-            .then (discover =>{
-                console.log(discover);
-                this.series = discover.data.results
-                
-            })
-        }
+    films: Array,
+    serie: Array,
     }
-
-}
+}    
 </script>
 
 <style scoped lang="scss">
@@ -161,11 +110,13 @@ export default {
                         .card{
                         width: calc(100% / 5);
                         margin: 20px;
+
                             &:hover{
-                                opacity: 0.8;
+                                opacity: 0.2;
                                 // background-color: rgba(0, 0, 0, 0.8) ;
                                    
                             }
+
                             .card-body{
                                 img{
                                 height: 20px;
