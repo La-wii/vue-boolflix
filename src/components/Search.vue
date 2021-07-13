@@ -6,7 +6,7 @@
             <div class="container-lg">
                 <div class="row d-flex py-3">
                     <div class="col-2">
-                        <img src="@/img/Netflix-logo.png" alt="">
+                        <img src="/img/Netflix-logo.png" alt="">
                     </div>
 
                     <div class="col-6">
