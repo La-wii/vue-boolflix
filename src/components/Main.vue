@@ -150,6 +150,7 @@ export default {
                             img{
                                 height: 20px;
                                 width: 20px;
+                                margin-left: 3px;
                             }
                         }
                     }
