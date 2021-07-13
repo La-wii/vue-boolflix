@@ -1,22 +1,20 @@
 <template>
   <div id="app">
-    <Header/>
+    <!-- <Header/> -->
     <Search @search="search"/>
     <Main :search="selectionText"/>
   </div>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
 import Main from '@/components/Main.vue'
-import Header from '@/components/Header.vue'
 import Search from '@/components/Search.vue'
 
 export default {
   name: "App",
   components: {
     Main,
-    Header,
+    // Header,
     Search,
   },
   data(){
