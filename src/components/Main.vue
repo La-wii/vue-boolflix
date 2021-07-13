@@ -11,7 +11,7 @@
                     <div v-for="(element, index) in films" :key="index" class="card bg-transparent" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
-                        <!-- <img :src="" class="card-img-top" alt="..."> -->
+                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="...">
                         <div class="card-body" v-if="element.title.toLowerCase().includes(search.toLowerCase())">
                             <h5 class="card-title">
                                 {{element.title}}
@@ -53,10 +53,10 @@
                     <div v-for="(element, index) in series" :key="index" class="card bg-transparent" style="width: 12rem;">
 
                         <!-- inizio  img + card -->
-                        <!-- <img :src="" class="card-img-top" alt="..."> -->
+                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="...">
                         <div class="card-body" v-if="element.name.toLowerCase().includes(search.toLowerCase())">
                             <h5 class="card-title">
-                                {{element.name}}
+                                {{element.name}}x   
                             </h5>
                             <p class="card-text">
                                 <strong>Titolo originale:</strong>
@@ -147,11 +147,14 @@ export default {
                         .card{
                         width: calc(100% / 5);
                         margin: 20px;
-                            img{
+                            .card-body{
+                                img{
                                 height: 20px;
                                 width: 20px;
                                 margin-left: 3px;
+                                }
                             }
+                            
                         }
                     }
                 }
