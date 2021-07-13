@@ -8,7 +8,7 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in films" :key="index" class="card bg-transparen text-light" style="width: 12rem;">
+                    <div v-for="(element, index) in films" :key="index" class="card bg-transparen " style="width: 12rem;">
 
                         <!-- inizio  img + card -->
                         <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="" class="position-relative">
@@ -95,10 +95,15 @@ export default {
     },
     data() {
         return {
-            apiURL : "https://api.themoviedb.org/3/movie/popular?api_key=e074c01e562b214f49b0d0b915aa74f1",
+            // apiURL : "https://api.themoviedb.org/3/search/movie?api_key=e23f5b7ea0860eb65056406dfeb3eda9&language=en-US&include_adult=false&query=text",
+            apiURL : "https://api.themoviedb.org/3/movie/popular?api_key=e23f5b7ea0860eb65056406dfeb3eda9",
             films: [],
-            serieURL : "https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=s",
+            serieURL : "https://api.themoviedb.org/3/search/tv?api_key=e23f5b7ea0860eb65056406dfeb3eda9&language=it_IT&query=s",
+            // serieURL : "https://api.themoviedb.org/3/search/tv?api_key=e23f5b7ea0860eb65056406dfeb3eda9&language=en-US&query=text",
             series: [],
+            // aUrlF:'https://api.themoviedb.org/3/search/movie',
+            // aKeyF:'e23f5b7ea0860eb65056406dfeb3eda9',
+            // language: 'en-US'
         }
     },
     created (){
@@ -110,6 +115,15 @@ export default {
         getFilms(){
             axios
             .get(this.apiURL)
+            // .get(this.aUrlF, {
+            //     params: {
+            //         api_key: this.aKeyF,
+            //         language: this.language,
+            //         query: text
+            //     }
+            // })
+
+            
             .then (picker =>{
                 console.log(picker);
                 this.films = picker.data.results
