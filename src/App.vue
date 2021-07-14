@@ -17,6 +17,7 @@ export default {
     Main,
     // Header,
     Search,
+    // StarRating,
   },
   data(){
     return{

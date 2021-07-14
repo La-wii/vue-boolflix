@@ -32,6 +32,7 @@
                                 <strong>Voto:</strong>
                                 <br>
                                 {{element.vote_average}}
+                                <star-rating :star-size=20 :rating="Math.round((element.vote_average)/2)"></star-rating>
                             </p>
                         </div>
                         <!-- fine img + card -->
@@ -73,6 +74,7 @@
                                 <strong>Voto:</strong>
                                 <br>
                                 {{element.vote_average}}
+                                <star-rating :star-size=20 :rating="Math.round((element.vote_average)/2)" ></star-rating>
                             </p>
                         </div>
                         <!-- fine img + card -->
@@ -88,13 +90,16 @@
 </template>
 
 <script>
-
+import StarRating from 'vue-star-rating';
 export default {
     name: "Main",
+    components: {
+    StarRating
+    },
     props: {
     films: Array,
     series: Array,
-    }
+    }       
 }   
 </script>
 
