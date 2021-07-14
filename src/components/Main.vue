@@ -4,6 +4,7 @@
         
             <!-- inizio row -->
             <div class="row py-5">
+                <h2>Film</h2>
                 <!-- inizio col -->
                 <div class="col-12 d-flex flex-wrap py-5">
                     
@@ -50,8 +51,8 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element, index) in serie" :key="index" class="card bg-transparent text-danger" style="width: 12rem;">
-
+                    <div v-for="(element,index) in series" :key="index" class="card bg-transparent text-danger" style="width: 12rem;">
+ 
                         <!-- inizio  img + card -->
                         <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="..." class="position-relative">
                         <div class="card-body position-absolute">
@@ -87,14 +88,14 @@
 </template>
 
 <script>
-// import axios from 'axios';
+
 export default {
     name: "Main",
     props: {
     films: Array,
-    serie: Array,
+    series: Array,
     }
-}    
+}   
 </script>
 
 <style scoped lang="scss">

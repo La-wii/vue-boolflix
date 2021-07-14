@@ -2,14 +2,14 @@
   <div id="app">
     <!-- <Header/> -->
     <Search @search="search"/>
-    <Main :films="films" :serie="serie"/>
+    <Main :films="films" :series="serie"/>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
 import Main from '@/components/Main.vue'
-import Search from '@/components/Search.vue'
+import Search from '@/components/Search.vue'  
 
 export default {
   name: "App",
@@ -32,12 +32,9 @@ export default {
     }
   },
   methods: {
-    // search(str){
-    //   console.log(str);
-    //   this.selectionText = str;
-    // },
+    
+      search(text){
 
-    search(text){
             axios
             .get(this.aUrlF, {
                 params: {
@@ -46,26 +43,24 @@ export default {
                     query: text
                 }
             })
-
-            
             .then (picker =>{
                 
                 this.films = picker.data.results;
-                console.log(this.films);
+                // console.log(this.films);
             });
 
             axios
             .get(this.aUrlS,{
-              api_key: this.aKeyF,
-              language: this.language,
-              query: text
+              params: {
+                api_key: this.aKeyF,
+                language: this.language,
+                query: text
+              }
             })
-
             .then (discover =>{
-                
-              this.serie = discover.data.results
+              this.serie = discover.data.results;
               console.log(this.serie);
-                
+              // console.log(discover);           
             });
         },
 
@@ -75,13 +70,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/style/common.scss'
-// #app {
-//   font-family: Avenir, Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: #2c3e50;
-//   margin-top: 60px;
-// }
+@import '@/style/common.scss';
 </style>
