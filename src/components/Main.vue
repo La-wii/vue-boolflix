@@ -12,7 +12,7 @@
                     <div v-for="(element, index) in films" :key="index" class="card bg-transparent" style="width: 13rem;">
 
                         <!-- inizio  img + card -->
-                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="" class="position-relative">
+                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="" class="position-relative card-img" onerror="this.src='/img/not-found.jpg'">
 
                         <div class="card-body position-absolute">
                             <h5 class="card-title">
@@ -54,10 +54,10 @@
                 <div class="col-12 d-flex flex-wrap py-5">
                     
                     <!-- inizio div ciclo -->
-                    <div v-for="(element,index) in series" :key="index" class="card bg-transparent text-danger" style="width: 13rem;">
+                    <div v-for="(element,index) in series" :key="index" class="card bg-transparent" style="width: 13rem;">
  
                         <!-- inizio  img + card -->
-                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="..." class="position-relative">
+                        <img :src="'https://image.tmdb.org/t/p/w342'+ element.poster_path" alt="..." class="position-relative card-img" onerror="this.src='/img/not-found.jpg'">
                         <div class="card-body position-absolute">
                             <h5 class="card-title">
                                 {{element.name}}x   
@@ -118,7 +118,11 @@ export default {
                         .card{
                         width: calc(100% / 5);
                         margin: 20px;
-
+                        color: transparent;
+                            .card-img{
+                                width: 100%;
+                                height: 100%; 
+                            }
                             .card-body{
                                 &:hover{
                                 width: 100%;
