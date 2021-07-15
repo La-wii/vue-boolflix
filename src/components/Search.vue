@@ -9,7 +9,7 @@
                         <img src="/img/Netflix-logo.png" alt="">
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-6 py-2">
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li><a href="#">Serie Tv</a></li>
